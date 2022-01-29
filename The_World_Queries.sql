@@ -35,7 +35,7 @@ FROM TheWorld..EntirePopulation
 ORDER BY Density DESC
 
 -- 5. Ranking of countries based on land area size
--- Russia's land is so vast that their density is just 9 persons / km²!
+-- Russia's land is so vast that their density is just 9 persons / kmÂ²!
 SELECT Country, Population, Land_Area, Density
 FROM TheWorld..EntirePopulation
 ORDER BY Land_Area DESC
