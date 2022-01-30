@@ -28,14 +28,14 @@ FROM TheWorld..EntirePopulation
 WHERE Land_Area > 0
 ORDER BY Density_Cal DESC
 
---4B. Ranking of countries based on population density
--- Not surprisingly, Singapore is in the list of top 3 countries. Next, I got curious about the largest countries from the spatial perspective.
+-- 4B. Ranking of countries based on population density
+-- Not surprisingly, Singapore is in the list of top 3 countries. I got curious about the largest countries in terms of the amount of land occupied.
 SELECT Country, Population, Land_Area, Density
 FROM TheWorld..EntirePopulation
 ORDER BY Density DESC
 
 -- 5. Ranking of countries based on land area size
--- Russia's land is so vast that their density is just 9 persons / km²!
+-- Russia's land is so vast that their density is just 9 persons / km², as compared to the most dense country (Monaco at 26337 people / km²)...
 SELECT Country, Population, Land_Area, Density
 FROM TheWorld..EntirePopulation
 ORDER BY Land_Area DESC
@@ -45,7 +45,8 @@ SELECT Country, Population, ISNULL(Net_Migrants, 0) AS Net_Migrants, (Net_Migran
 FROM TheWorld..EntirePopulation
 ORDER BY Net_Migrants_to_Population_Ratio DESC
 
---7. Which countries were experiencing low fertility rates in 2020?
+-- 7. Which countries experienced low fertility rates in 2020?
+-- It fascinates me that the top 3 countries that had low fertility rates are located in Asia.
 SELECT Country, Population, Median_Age, Fertility_Rate
 FROM TheWorld..EntirePopulation
 WHERE Fertility_Rate IS NOT NULL
