@@ -22,7 +22,7 @@ WHERE Net_Change < 0
 ORDER BY Net_Change
 
 -- 4A. To double check on how the calculation of Density was done
--- Note: Holy See was removed from the data as her Land_Area was stated as 0 in the dataset
+-- Note: Holy See was removed from the data as her Land_Area was stated as 0 in the dataset.
 SELECT Country, Population, Land_Area, Density, (Population / Land_Area) AS Density_Calculated
 FROM TheWorld..EntirePopulation
 WHERE Land_Area > 0
@@ -35,7 +35,7 @@ FROM TheWorld..EntirePopulation
 ORDER BY Density DESC
 
 -- 5. Ranking of countries based on land area size
--- Russia's land is so vast that their density is just 9 persons / km², as compared to the most dense country (Monaco at 26337 people / km²)...
+-- Russia's land is so vast that their density is just 9 persons / km², as compared to the most dense country in the world (Monaco at 26337 people / km²)!
 SELECT Country, Population, Land_Area, Density
 FROM TheWorld..EntirePopulation
 ORDER BY Land_Area DESC
@@ -46,7 +46,7 @@ FROM TheWorld..EntirePopulation
 ORDER BY Net_Migrants_to_Population_Ratio DESC
 
 -- 7. Which countries experienced low fertility rates in 2020?
--- It fascinates me that the top 3 countries that had low fertility rates are located in Asia.
+-- It fascinates me that the top 3 countries with low fertility rates are located in Asia.
 SELECT Country, Population, Median_Age, Fertility_Rate
 FROM TheWorld..EntirePopulation
 WHERE Fertility_Rate IS NOT NULL
